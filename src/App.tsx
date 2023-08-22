@@ -1,13 +1,12 @@
+import React from 'react';
+import Calculator from "./components/Calculator.tsx";
 
-
-function App() {
- 
-
+const App: React.FC = () => {
   return (
-    <>
-     hello
-    </>
-  )
-}
+    <div>
+      <Calculator />
+    </div>
+  );
+};
 
-export default App
+export default App;

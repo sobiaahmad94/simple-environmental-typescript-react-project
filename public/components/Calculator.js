@@ -22,6 +22,17 @@ const StyledTitle = styled.h2 `
     font-size: 33px;
     font-weight: 700;
 `;
+const StyledLabel = styled.label `
+  font-weight: bold;
+  margin-bottom: 5px;
+`;
+const StyledInput = styled.input `
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+`;
 const Calculator = () => {
     // state for distance
     const [distance, setDistance] = useState(0);
@@ -35,6 +46,6 @@ const Calculator = () => {
         const footprint = (distance / fuelEfficiency) * 2.3;
         setCarbonFootprint(footprint);
     };
-    return (_jsxs(StyledCalculatorContainer, { children: [_jsx(StyledTitle, { children: "Carbon Footprint Calculator" }), _jsxs("div", { children: [_jsx("label", { children: "Distance(km):" }), _jsx("input", { type: "number", value: distance, onChange: (event) => setDistance(parseFloat(event.target.value)) })] }), _jsxs("div", { children: [_jsx("label", { children: "Fuel Efficiency(km/l):" }), _jsx("input", { type: "number", value: fuelEfficiency, onChange: (event) => setFuelEfficiency(parseFloat(event.target.value)) })] }), _jsx("button", { onClick: calculateCarbonFootprint, children: "Calculate" }), carbonFootprint !== null && (_jsxs("p", { children: ["Carbon Footprint: ", carbonFootprint.toFixed(2), "kg CO2"] }))] }));
+    return (_jsxs(StyledCalculatorContainer, { children: [_jsx(StyledTitle, { children: "Carbon Footprint Calculator" }), _jsxs("div", { children: [_jsx(StyledLabel, { children: "Distance(km):" }), _jsx(StyledInput, { type: "number", value: distance, onChange: (event) => setDistance(parseFloat(event.target.value)) })] }), _jsxs("div", { children: [_jsx(StyledLabel, { children: "Fuel Efficiency(km/l):" }), _jsx(StyledInput, { type: "number", value: fuelEfficiency, onChange: (event) => setFuelEfficiency(parseFloat(event.target.value)) })] }), _jsx("button", { onClick: calculateCarbonFootprint, children: "Calculate" }), carbonFootprint !== null && (_jsxs("p", { children: ["Carbon Footprint: ", carbonFootprint.toFixed(2), "kg CO2"] }))] }));
 };
 export default Calculator;

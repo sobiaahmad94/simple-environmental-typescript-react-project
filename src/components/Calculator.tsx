@@ -25,6 +25,18 @@ const StyledTitle = styled.h2`
     font-weight: 700;
 `;
 
+const StyledLabel = styled.label`
+  font-weight: bold;
+  margin-bottom: 5px;
+`;
+
+const StyledInput = styled.input`
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+`;
 
 
 const Calculator: React.FC = () => {
@@ -46,16 +58,16 @@ const Calculator: React.FC = () => {
     <StyledCalculatorContainer>
       <StyledTitle>Carbon Footprint Calculator</StyledTitle>
       <div>
-        <label>Distance(km):</label>
-        <input
+        <StyledLabel>Distance(km):</StyledLabel>
+        <StyledInput
           type="number"
           value={distance}
           onChange={(event) => setDistance(parseFloat(event.target.value))}
         />
       </div>
       <div>
-        <label>Fuel Efficiency(km/l):</label>
-        <input type="number" value={fuelEfficiency} 
+        <StyledLabel>Fuel Efficiency(km/l):</StyledLabel>
+        <StyledInput type="number" value={fuelEfficiency} 
         onChange={(event) => setFuelEfficiency(parseFloat(event.target.value))}/>
       </div>
       <button onClick={calculateCarbonFootprint}>Calculate</button>

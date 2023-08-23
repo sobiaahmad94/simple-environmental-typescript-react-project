@@ -12,13 +12,13 @@
     "noEmit": false,  
     "jsx": "react-jsx",
 
-    /* Linting */
+    /* linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* Output and Input Directories */
+    /* output and input directories */
     "outDir": "public",  // setting to "public"
     "rootDir": "src"      // setting to "src"
   },

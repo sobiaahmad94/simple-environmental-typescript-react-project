@@ -30,8 +30,25 @@ const StyledInput = styled.input `
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 3px solid rgb(199, 104, 69)
   border-radius: 5px;
+`;
+const StyledButton = styled.button `
+  background-color: rgb(238, 134, 97);
+  color: rgb(255, 255, 255);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  :hover {
+    background-color: rgb(69, 240, 131);
+  }
+`;
+const StyledOutput = styled.p `
+    color: rgb(69, 240, 131);
+    font-size: 28px;
+    font-weight: bolder;
 `;
 const Calculator = () => {
     // state for distance
@@ -46,6 +63,6 @@ const Calculator = () => {
         const footprint = (distance / fuelEfficiency) * 2.3;
         setCarbonFootprint(footprint);
     };
-    return (_jsxs(StyledCalculatorContainer, { children: [_jsx(StyledTitle, { children: "Carbon Footprint Calculator" }), _jsxs("div", { children: [_jsx(StyledLabel, { children: "Distance(km):" }), _jsx(StyledInput, { type: "number", value: distance, onChange: (event) => setDistance(parseFloat(event.target.value)) })] }), _jsxs("div", { children: [_jsx(StyledLabel, { children: "Fuel Efficiency(km/l):" }), _jsx(StyledInput, { type: "number", value: fuelEfficiency, onChange: (event) => setFuelEfficiency(parseFloat(event.target.value)) })] }), _jsx("button", { onClick: calculateCarbonFootprint, children: "Calculate" }), carbonFootprint !== null && (_jsxs("p", { children: ["Carbon Footprint: ", carbonFootprint.toFixed(2), "kg CO2"] }))] }));
+    return (_jsxs(StyledCalculatorContainer, { children: [_jsx(StyledTitle, { children: "Carbon Footprint Calculator" }), _jsxs("div", { children: [_jsx(StyledLabel, { children: "Distance(km):" }), _jsx(StyledInput, { type: "number", value: distance, onChange: (event) => setDistance(parseFloat(event.target.value)) })] }), _jsxs("div", { children: [_jsx(StyledLabel, { children: "Fuel Efficiency(km/l):" }), _jsx(StyledInput, { type: "number", value: fuelEfficiency, onChange: (event) => setFuelEfficiency(parseFloat(event.target.value)) })] }), _jsx(StyledButton, { onClick: calculateCarbonFootprint, children: "Calculate" }), carbonFootprint !== null && (_jsxs(StyledOutput, { children: ["Carbon Footprint: ", carbonFootprint.toFixed(2), "kg CO2"] }))] }));
 };
 export default Calculator;

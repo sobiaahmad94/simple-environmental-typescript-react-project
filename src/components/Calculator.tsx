@@ -34,8 +34,27 @@ const StyledInput = styled.input`
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 3px solid rgb(199, 104, 69)
   border-radius: 5px;
+`;
+
+const StyledButton = styled.button`
+  background-color: rgb(238, 134, 97);
+  color: rgb(255, 255, 255);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  :hover {
+    background-color: rgb(69, 240, 131);
+  }
+`;
+
+const StyledOutput = styled.p`
+    color: rgb(69, 240, 131);
+    font-size: 28px;
+    font-weight: bolder;
 `;
 
 
@@ -70,9 +89,9 @@ const Calculator: React.FC = () => {
         <StyledInput type="number" value={fuelEfficiency} 
         onChange={(event) => setFuelEfficiency(parseFloat(event.target.value))}/>
       </div>
-      <button onClick={calculateCarbonFootprint}>Calculate</button>
+      <StyledButton onClick={calculateCarbonFootprint}>Calculate</StyledButton>
       {carbonFootprint !== null && (
-        <p>Carbon Footprint: {carbonFootprint.toFixed(2)}kg CO2</p>
+        <StyledOutput>Carbon Footprint: {carbonFootprint.toFixed(2)}kg CO2</StyledOutput>
       )}
     </StyledCalculatorContainer>
   );

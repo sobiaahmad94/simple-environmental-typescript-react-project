@@ -86,8 +86,11 @@ const Calculator: React.FC = () => {
       </div>
       <div>
         <StyledLabel>Fuel Efficiency(km/l):</StyledLabel>
-        <StyledInput type="number" value={fuelEfficiency} 
-        onChange={(event) => setFuelEfficiency(parseFloat(event.target.value))}/>
+        <StyledInput
+          type="number"
+          value={fuelEfficiency}
+          onChange={(event) => setFuelEfficiency(parseFloat(event.target.value))}
+        />
       </div>
       <StyledButton onClick={calculateCarbonFootprint}>Calculate</StyledButton>
       {carbonFootprint !== null && (
@@ -98,3 +101,9 @@ const Calculator: React.FC = () => {
 };
 
 export default Calculator;
+
+
+
+
+
+
